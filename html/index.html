@@ -7,7 +7,7 @@
 
     <link 
     rel="icon"
-     href="">
+     href="cartoon.jpg">
     <link rel="stylesheet" href="style.css">
      <style>
         *{
@@ -24,7 +24,39 @@
     > -->
 
 
-    <div id="bro">Dipershan</div>
+    <!-- <div id="bro">Dipershan</div>
     <div class="bro">Dipershan</div>
+     -->
+
+
+     <!-- <form action="" onsubmit="formSubmission(); return false"> -->
+        <form action="" id="hello">
+        <label for="">FullName</label>
+        <input type="text" placeholder="FullName">
+     </br>
+        <label for="">LastName</label>
+        <input type="text" placeholder="LastName" required>
+     </br>
+        <label for="">Email</label>
+        <input type="email" placeholder="joe@gmail.com">
+     </br>
+     <label for="">Choose your Country</label>
+         <select name="country" id="">
+            <option value="">Select Your Country</option>
+            <option value="Nepal">Nepal</option>
+            <option value="US">US</option>
+            <option value="Australia">Australia</option>
+         </select>
+    </br> 
+    <textarea name="" id="" rows="10" cols="30" name="msg"></textarea>
+    <br/>
+    <input type="submit"   value="Submit">
+    
+    <button type="reset">Reset</button>
+
+    </form>
+    <div  class="systemMsg"></div>
+    <div  id="systemMsg"></div>
+    <script src="index.js" ></script>
 </body>
 </html>

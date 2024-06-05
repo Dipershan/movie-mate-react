@@ -1,7 +1,13 @@
 //MODIFY
-$primary : rgb(212, 24, 200);
+$primary : rgb(138, 54, 132);
 $body-color: rgb(17, 3, 16);
-$body-bg:  rgb(161, 65, 153) ;
+$body-bg:  rgb(128, 116, 127) ;
+$min-contrast-ratio: 3 !default;
+
+$theme-colors: (
+    "primary": $primary,
+);
+
 
 @import "../node_modules/bootstrap/scss/bootstrap";
 

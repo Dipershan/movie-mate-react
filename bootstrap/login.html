@@ -14,7 +14,7 @@
     <!-- Layout     -->
     <div class="flex d-flex justify-content-center align-items-center vh-100">
         <!-- component -->
-       <div class="card shadow-lg p-3 mb-5" style="width: 450px;">
+       <div class="card shadow-lg  mb-5" style="width: 450px;">
         <div class="card-body">
           <div class="text-center">
             <img src="logo-color.png" alt="Movie Logo" width="200px" onerror="this.scr=`logo.png`"    >
@@ -28,15 +28,25 @@
               <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
             </div>
             <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
+              <label  class="form-label">Password</label>
+              <input type="password" class="form-control" />
             </div>
-            <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
+             <a 
+             class="flex d-flex flex-row-reverse"
+             href="./forget-password.html"
+            style="text-decoration: none; cursor:pointer"
+            >Forgot password?</a>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
+          
+        </div>
+        <hr/>
+        <div class="text-center">
+          <a 
+          class="flex"
+         style="text-decoration: none; cursor:pointer"
+         href="./register.html" 
+         >Register</a>
         </div>
 
 

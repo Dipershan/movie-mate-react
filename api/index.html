@@ -4,8 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
+    
 </head>
 <body>
-    <script src="index.jss"></script>    
+    <input type="text" name="email" placeholder="email please" id="email">
+    <input type="text" name="password" placeholder="password please" id="pw">
+    <button onclick="login(); return false;">LOGIN</button>
+    <p id="userdetails"></p>
+
+    <!-- <button onclick="getProducts('/products'); return false;">GET DATA </button> -->
+    <!-- <script src="index.js"></script>     -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="axios.js"></script>
+    
 </body>
 </html>

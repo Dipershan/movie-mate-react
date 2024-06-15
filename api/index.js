@@ -13,3 +13,5 @@ const getProducts = async (url) =>{
         console.log(error);
     }
 }
+
+getProducts( 'https://dummyjson.com/products')

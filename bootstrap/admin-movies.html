@@ -9,9 +9,202 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
     crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="scss/custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        html, body {
+            height: 100%;
+        }
+        .sidebar-container {
+            height: 100%;
+        }
+    </style>
 </head>
-<body>
-    Hello admin
+<body class=" d flex vh-100">
+<div class=" flex d-flex h-100">
+  <!-- SIDE BARS -->
+    <div>
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark h-100" 
+    style="width: 280px;">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+          <svg class="bi pe-none me-2" width="40" height="32">
+            <use xlink:href="#bootstrap"></use>
+          </svg>
+          <span class="fs-4">Sidebar</span>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+            <a href="#" class="nav-link active" aria-current="page">
+              
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link text-white">
+              
+              Movies
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link text-white">
+              
+              Users
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link text-white">
+              
+              Orders
+            </a>
+          </li>
+         
+          
+        </ul>
+        <hr>
+        <div class="dropdown">
+          <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+            <strong>mdo</strong>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+            
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Sign out</a></li>
+          </ul>
+        </div>
+    </div> 
+    </div>    
+
+<div class="col-md-9 mt-5 overflow-auto">
+    <div class="container d-grid gap-4">
+        <div class="card">
+             <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <div><h1>Movies</h1></div>
+                    <div>
+                        <button type="button" class="btn btn-danger">
+                            <i class="fa fa-plus"></i>&nbsp;Movie
+                        </button>
+                    </div>
+                </div>
+                <table class="table table-striped table-hover" >
+                    <thead>
+                      <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Seats Available</th>
+                        <th scope="col">Release Date</th>
+                        <th scope="col">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Mark</td>
+                        <th scope="row">3</th>
+                        <td>Otto</td>
+                        <td>
+                            <div class="btn-toolbar d-flex justify-content-center">
+                                <div class="btn-group me-2" role="group" >
+                                    <button type="button" class="btn btn-primary">
+                                        <i class="fa fa-eye"></i>
+                                    </button>
+                                    
+                                    
+                                  </div>
+                                  <div class="btn-group me-2" role="group" >
+                                    <button type="button" class="btn btn-danger">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                    
+                                  </div>
+                                  
+                            </div>
+                        </td>
+                      </tr>
+                     
+                      <tr>
+                        <td>Mark</td>
+                        <th scope="row">3</th>
+                        <td>@twitter</td>
+                        <td>
+                            <div class="btn-toolbar d-flex justify-content-center">
+                                <div class="btn-group me-2" role="group" >
+                                    <button type="button" class="btn btn-primary">
+                                        <i class="fa fa-eye"></i>
+                                    </button>
+                                    
+                                    
+                                  </div>
+                                  <div class="btn-group me-2" role="group" >
+                                    <button type="button" class="btn btn-danger">
+                                        <i class="f  a fa-trash"></i>
+                                    </button>
+                                    
+                                  </div>
+                                  
+                            </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                            <p class="placeholder-glow">
+                                <span class="placeholder col-12"></span>
+                            </p>
+                        </td>
+                        <td>
+                            <p class="placeholder-glow">
+                                <span class="placeholder col-12"></span>
+                            </p>
+                        </td>
+                        <td>
+                            <p class="placeholder-glow">
+                                <span class="placeholder col-12"></span>
+                            </p>
+                        </td>
+                        <td>
+                            <p class="placeholder-glow">
+                                <span class="placeholder col-12"></span>
+                            </p>
+                        </td>
+                      </tr>
+                     
+                      
+                    </tbody>
+                  </table>
+                  <div class="d-flex justify-content-center">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                          <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                              <span aria-hidden="true">&laquo;</span>
+                            </a>
+                          </li>
+                          <li class="page-item"><a class="page-link" href="#">1</a></li>
+                          <li class="page-item"><a class="page-link" href="#">2</a></li>
+                          <li class="page-item"><a class="page-link" href="#">3</a></li>
+                          <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                              <span aria-hidden="true">&raquo;</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                  </div>
+        </div>
+    </div>  
+    </div>
+</div>    
+    
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script
+    
+ 
+ 
 </body>
 </html>
+
+
+

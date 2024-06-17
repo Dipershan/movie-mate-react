@@ -48,12 +48,10 @@ const login = async () => {
             }
 
         });
-        localStorage.setItem("userCreditials" ,  JSON.stringify(data));
-        sessionStorage.setItem("userCreditials" ,  JSON.stringify(data))
-        const userInfo =localStorage.getItem("userCredentials");
+        localStorage.setItem("userCredentials" ,  JSON.stringify(data));
+        sessionStorage.setItem("userCredentials" ,  JSON.stringify(data));
+        const userInfo = localStorage.getItem("userCredentials");
         document.getElementById("userDetails").innerHTML =  userInfo;
-
-
         //cancel the request 
         controller.abort();
         

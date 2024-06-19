@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 export const Goal = () => {
 
@@ -12,7 +12,7 @@ export const Goal = () => {
         <input placeholder='NAme'  type="text" name="" id="rod" />
 
         <select name="" id="siu" onChange = {()=> shoot(document.getElementById("siu").value)}>
-        <option value="">SElect </option>
+        <option value="">Select </option>
             <option value="messi">Messi</option>
             <option value="ronaldo">Ronaldo</option>
         </select>

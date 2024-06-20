@@ -1,7 +1,7 @@
 // import Goal from "./Goal";
 // import { conditionals } from "./conditionals";
 // import Login from "./Login";
-import List  from "./List"
+import List  from "./List";
 
 export const App = () => {
   //js 
@@ -15,8 +15,10 @@ export const App = () => {
      color:"red",
   };
   return (
-    <div>< data={data} car={detail}/></div>
+    <div>
+      <List data={data} car={detail}/>
+      </div>
   );
-}
+};
 
 export default App;

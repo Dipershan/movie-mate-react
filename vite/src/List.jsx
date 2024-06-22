@@ -1,43 +1,34 @@
-import { useState ,  useEffect } from "react";
-import { instance } from "./utils/axios";
+import { useState  } from "react";
+import useDebounce from "./hooks/useDebounce";
+import useFetch from "./hooks/useFetch";
 
-//Scneraio no1  (Countdown)
-// const List  = () =>{
-//     const [count ,  setCount] =  useState(10);
-
-//     useEffect(()=>{
-//       //Logic
-//       if(count <=0) return;
-//       setTimeout(()=>{
-//         setCount(count -1);
-//       }  , 1000)
-      
-//     })
-
-//     return <>{count}</>
-
-
-// };
-
-//Scenario no2
-const List = () =>{
-  //API URL : https://dummyjson.com/recipes/search
-    const [data , setData] = useState([]);
-
-    useEffect(()=>{
-      const fetchRecipes = async() =>{
-        const {data}  =  await instance.get('recipes/search');
-        setData(data.recipes);
-
-      };
-      fetchRecipes();
-    } , []);
-
-  return <>{JSON.stringify(data)}</>;
 
   
   
-};
+  const List  =  ( )=>{
+    
+    const [search , setSearch] =  useState("");
+
+    const {result}  =  useDebounce({ searchTerm:search});
+
+    const {loading ,  error ,  data} = useFetch({
+      url:`recipes/search?q=${result}`,
+    });
+
+    return <>
+  
+    <input 
+    placeholder="Search by recipe"
+    onChange={(e)=>setSearch(e.target.value)} 
+    />
+      {error && JSON.stringify(error)}
+      {loading? <>Data Loading..</> :JSON.stringify(data.recipes)}</>;
+    }
+
+    
+
+
+
 
 
 export default List;

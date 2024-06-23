@@ -1,24 +1,22 @@
-// import Goal from "./Goal";
-// import { conditionals } from "./conditionals";
-// import Login from "./Login";
-import List  from "./List";
+import "./App.css";
+import Navbar from "./Navbar";
 
-export const App = () => {
-  //js 
-  // const data  =  [
-  //   {name: "BMW" ,  model :2009},
-  //   {name: "Mercedes" ,  model :2010},
-  // ];
-  // const detail ={
-  //   name:"Tesla",
-  //    model:2099,
-  //    color:"red",
-  // };
+import { useContext } from "react";
+import {intialContext} from './context/ThemeContext';
+
+
+
+const App = () => {
+  const context =  useContext(intialContext);
+  if(!context) throw new Error("COntext must be wraped inside provider")
+
   return (
     <div>
-      <List />
-      </div>
-  );
-};
+    <Navbar />    
+      <h1 className="dark">Title</h1>
 
-export default App;
+    </div>
+  )
+}
+
+export default App

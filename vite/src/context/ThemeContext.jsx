@@ -1,22 +1,27 @@
-import {createContext, useState} from 'react'
+import { createContext, useState ,useContext } from 'react';
 
-export const intialContext =  createContext(null);
+const intialContext =  createContext(null);
 
 const ThemeContext  =({children}) =>{
-    const [theme ,  setTheme] = useState("ligth");
+    const [theme ,  setTheme] = useState("light");
 
 
     const toggleTheme = () =>{
-        setTheme(theme == "light" ? "dark":"light")
-    }
+        setTheme(theme === "light" ? "dark":"light")
+    };
 
-    
   return(
      <intialContext.Provider value={{theme ,  toggleTheme}}>
         {children}
-    </intialContext.Provider>)
-  ;
-}
+    </intialContext.Provider>);
 
+};
 
 export default ThemeContext ;
+
+//Custom Hook
+export const useThemeContext =  () =>{
+    const  context =  useContext(intialContext);
+    if(!context) throw new Error ("Context is not wrappped inside provider");
+    return context;
+}

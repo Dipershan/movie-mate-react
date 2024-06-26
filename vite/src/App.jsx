@@ -1,110 +1,42 @@
-import { useState  ,  useRef} from "react";
+import Contact from './pages/user/Contact';
+import Login from './pages/user/Login';
+import Movie from './pages/user/Movie';
+import Movies from './pages/user/Movies';
+import ErrorPage from './pages/ErrorPage';
+
+import { Route  , Routes } from 'react-router-dom';
+
+import Users from "./pages/admin/Users";
+import UserLayout from './layouts/UserLayout';
+
 
 
 const App = () => {
-  const formRef = useRef();
-  // const [error ,  setError] =  useState({email:"" , message:""})
-  const [payload  ,setPayload] = useState({
-    email:"",
-    message:"",
-  });
-
-  const handleSubmit = (e) =>{
-    e.preventDefault();
-    console.log(payload);
-  };
-
-  // const validateFormData = (formData) =>{
-  //   const {email ,  msg} = formData;
-  //   if(email.includes("@")){
-  //     return true;
-  //   }
-  //   else{
-      
-  //   }
-  // };
-
-  const handleUncontrolledSubmit =  (e) =>{
-    e.preventDefault();
-    const data  =  formRef.current;
-    const formData  =  new FormData(data);
-    for(const value of formData.values()){
-      console.log(value);
-    }
-  };
-
   return (
     <>
-      <div className="container">
-      <form onSubmit={(e) => handleSubmit(e)}>
-          <div className="mb-3">
-              <label className="form-label">Email</label>
-              <input type="email"
-              className="form-control"
-              placeholder="name@example.com"
-              onChange={(e)=>
-                setPayload((prev)=>{
-                  return{...prev ,  email: e.target.value};
-                })
-              } 
-              />
+    <Routes>
+      <Route path='/' element={<UserLayout />}>
+      {/* User Normal Routes */}
+        <Route path='contact' element={<Contact />}/>
+        <Route path='login' element={<Login />}/>
+        <Route path='movies' element={<Movies />}/>
+        <Route path='movie/:id' element={<Movie />}/>
+      </Route>
 
-          </div>
-              
-
-          <div className="mb-3">
-              <label className="form-label">Message</label>
-              <input type="text"
-              className="form-control"
-              placeholder="Message"
-              onChange={(e)=>
-                setPayload((prev)=>{
-                  return{...prev ,  message: e.target.value};
-                })
-              } 
-              />
-
-          </div>
-
-          <button type="submit">Submit</button>
-      </form>
-  </div>
-
-    <br />
-    <br />
-
-    <div className="container">
-      <h2>Uncontrolled From</h2>
-      <form onSubmit={(e) => handleUncontrolledSubmit(e)} ref={formRef}>
-          <div className="mb-3">
-              <label className="form-label">Email</label>
-              <input type="email"
-              className="form-control"
-              placeholder="name@example.com"
-        
-              />
-
-          </div>
-              
-
-          <div className="mb-3">
-              <label className="form-label">Message</label>
-              <input type="text"
-              className="form-control"
-              placeholder="Message"
-
-              />
-
-          </div>
-
-          <button type="submit">Submit</button>
-      </form>
-
-
-    </div>
-    </>
+        {/* Admin Routes */}
+        <Route path='/admin'>
+        <Route path='users' element={<Users />}/>
+        </Route>
+         
     
+
+      {/* Error Handling */}
+      <Route path='*' element={<ErrorPage />}/>
+    </Routes>
+     
+    </>
   )
 }
 
-export default App
+export default App;
+
